@@ -1,4 +1,4 @@
-package odometry.abc;
+package io.github.tacterex.odometry.abc;
 
 public abstract class IMUABC {
     private final int sensivity, max_velocity;

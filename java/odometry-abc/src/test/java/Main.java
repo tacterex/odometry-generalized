@@ -1,9 +1,9 @@
-import odometry.abc.EncoderABC;
+import io.github.tacterex.odometry.abc.EncoderABC;
 
 // to be clarified
 final class EncoderTest extends EncoderABC {
     public EncoderTest(){
-        super(0, 4096);
+        super(4096);
     }
 
     @Override

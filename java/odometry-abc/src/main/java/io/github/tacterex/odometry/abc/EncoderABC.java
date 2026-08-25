@@ -1,4 +1,4 @@
-package odometry.abc;
+package io.github.tacterex.odometry.abc;
 
 public abstract class EncoderABC {
     private final int min_possible_position;
@@ -11,12 +11,12 @@ public abstract class EncoderABC {
 
     abstract protected int read_value();
 
-    public EncoderABC(int left_bound, int right_bound){
-        min_possible_position = left_bound;
-        amplitude = (right_bound - left_bound) / 2;
+    public EncoderABC(int max_bound){
+        min_possible_position = 0;
+        amplitude = max_bound / 2;
         reset();
-        TO_DEGREE_MULTIPLIER = 360.0f / (right_bound - left_bound);
-        TO_RAD_MULTIPLIER = 2 * (float)Math.PI / (right_bound - left_bound);
+        TO_DEGREE_MULTIPLIER = 360.0f / max_bound;
+        TO_RAD_MULTIPLIER = 2 * (float)Math.PI / max_bound;
     }
 
     public final void update_all() {
