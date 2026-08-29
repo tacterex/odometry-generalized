@@ -7,7 +7,7 @@ final class EncoderTest extends EncoderABC {
     }
 
     @Override
-    protected int read_value(){
+    protected float read_value(){
         return 1;
     }
 }
