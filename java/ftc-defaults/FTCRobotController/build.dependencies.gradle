@@ -1,5 +1,5 @@
 repositories {
-    mavenCentral()
+    mavenLocal()
     google() // Needed for androidx
 }
 
@@ -13,5 +13,8 @@ dependencies {
     implementation 'org.firstinspires.ftc:FtcCommon:11.2.1'
     implementation 'org.firstinspires.ftc:Vision:11.2.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation('io.github.tacterex:odometry-abc:1.0.1-SNAPSHOT'){
+        changing = true
+    }
 }
 
