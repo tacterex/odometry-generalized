@@ -1,2 +1,3 @@
-/java/.vscode
-/java/odometry-abc/target
+/java/.vscode/
+/java/odometry-abc/target/
+/.vscode/

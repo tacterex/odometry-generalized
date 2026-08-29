@@ -1,17 +1,17 @@
 package io.github.tacterex.odometry.abc;
 
 public abstract class EncoderABC {
-    private final int min_possible_position;
-    private int current_position, current_step;
-    private int current_reading, last_reading, raw_step;
-    private final int amplitude;
+    private final float min_possible_position;
+    private float current_position, current_step;
+    private float current_reading, last_reading, raw_step;
+    private final float amplitude;
 
     private final float TO_DEGREE_MULTIPLIER;
     private final float TO_RAD_MULTIPLIER;
 
-    abstract protected int read_value();
+    abstract protected float read_value();
 
-    public EncoderABC(int max_bound){
+    public EncoderABC(float max_bound){
         min_possible_position = 0;
         amplitude = max_bound / 2;
         reset();
@@ -32,11 +32,11 @@ public abstract class EncoderABC {
         last_reading = current_reading;
     }
 
-    public final int get_current_position() {
+    public final float get_current_position() {
         return current_position;
     }
 
-    public final int get_current_step() {
+    public final float get_current_step() {
         return current_step;
     }
 
@@ -58,7 +58,7 @@ public abstract class EncoderABC {
 
     public final void reset() {
         current_position = min_possible_position;
-        current_reading = last_reading = min_possible_position;
+        current_reading = last_reading = read_value();
         current_step = raw_step = 0;
     }
 }
